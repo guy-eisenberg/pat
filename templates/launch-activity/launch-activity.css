@@ -1,0 +1,30 @@
+.launch_activity {
+  position: fixed;
+  bottom: 6%;
+  right: 3%;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: #7ce027;
+  padding: 15px 20px;
+  border-radius: 40px;
+  box-shadow: rgba(50, 50, 50, 0.15) 0px 5px 6px 0px;
+}
+
+.launch_activity:hover {
+  background-color: #74dc1d;
+  color: white !important;
+  box-shadow: rgba(50, 50, 50, 0.15) 0px 5px 6px 0px !important;
+}
+
+.launch_activity:active,
+.launch_activity:focus {
+  color: white !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .launch_activity {
+    font-size: 14px !important;
+    bottom: 3% !important;
+  }
+}

@@ -1,0 +1,1 @@
+<div id="activities-sidebar-root" class="activities-sidebar-root performance-element" style="width: 100%; height: 100%"></div>

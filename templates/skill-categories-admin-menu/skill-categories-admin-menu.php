@@ -1,0 +1,1 @@
+<div id="skill-categories-admin-menu-root" class="skill-categories-admin-menu-root" style="padding:16px;" />

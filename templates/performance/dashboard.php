@@ -1,0 +1,1 @@
+<div id="dashboard-root" class="dashboard-root performance-element" style="width: 100%; height: 100%" />

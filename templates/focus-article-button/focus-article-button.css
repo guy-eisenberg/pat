@@ -1,0 +1,45 @@
+.simplefavorite-button {
+  float: right;
+}
+
+.add_to_focus_articles {
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  padding: 7px 20px 5px 50px;
+  margin-top: -10px;
+  background-image: url(/parts/copilot_inactive.svg);
+  background-repeat: no-repeat;
+  background-position: 13px 11px;
+  background-size: 27px;
+  font-weight: 600;
+  color: #777 !important;
+  height: 40px;
+}
+
+.add_to_focus_articles:hover {
+  background-image: url(/parts/copilot_active.svg);
+  cursor: pointer;
+  box-shadow: rgb(50 50 50 / 10%) 0px 0px 6px 1px;
+}
+
+.remove_from_focus_articles {
+  background-image: url(/parts/copilot_hover.svg);
+  background-repeat: no-repeat;
+  background-position: 13px 9px;
+  background-size: 27px;
+  font-weight: 600;
+  background-color: #74d51f;
+  color: white;
+  border-radius: 20px;
+  border: 1px solid #74d51f;
+  padding: 5px 20px 5px 50px;
+  margin-top: -10px;
+}
+
+.remove_from_focus_articles:hover {
+  background-image: url(/parts/copilot_active.svg);
+  cursor: pointer;
+  box-shadow: rgb(50 50 50 / 20%) 0px 0px 6px 1px;
+  background-color: white;
+  color: #74d51f;
+}

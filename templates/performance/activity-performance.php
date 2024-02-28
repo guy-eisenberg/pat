@@ -1,0 +1,1 @@
+<div id="activity-performance-root" class="activity-performance-root performance-element" style="width: 100%; height: 100%" data-activity="<?php echo $atts['activity'] ?>"></div>

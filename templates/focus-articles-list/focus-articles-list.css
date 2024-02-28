@@ -1,0 +1,54 @@
+.favorites-list {
+  list-style: none;
+}
+.favorites-list li {
+  zoom: 1;
+  padding: 0;
+  border-top: none;
+  margin: 0;
+  background-image: url(/parts/copilot_kb_badge.svg);
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: 0 3px;
+  padding-left: 45px;
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 20px;
+  margin-right: 3% !important;
+}
+.favorites-list li:before,
+.favorites-list li:after {
+  content: ' ';
+  display: table;
+}
+.favorites-list li:after {
+  clear: both;
+}
+.favorites-list li img {
+  float: left;
+  margin-right: 1em;
+}
+
+.favorites-list a {
+  color: #666;
+}
+.favorites-list a:hover {
+  color: #444;
+}
+
+.simplefavorites-clear {
+  background: #e95757;
+  border-radius: 30px;
+  font-family: 'Open Sans' !important;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 15px 20px 15px 20px;
+  color: white;
+}
+.simplefavorites-clear:hover,
+.simplefavorites-clear:focus,
+.simplefavorites-clear:active {
+  background: #ff0000b3;
+  box-shadow: rgb(50 50 50 / 25%) 0px 0px 6px 1px;
+}

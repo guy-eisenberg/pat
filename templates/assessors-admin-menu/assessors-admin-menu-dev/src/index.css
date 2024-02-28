@@ -1,0 +1,73 @@
+@import './preflight.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.assessors-admin-menu-root {
+  li {
+    @apply !mb-0;
+  }
+
+  input {
+    @apply !outline-none;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    @apply m-0;
+    -webkit-appearance: none;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  .notiflix-report-message {
+    @apply text-center;
+  }
+
+  .react-tags-wrapper {
+    @apply relative z-10 w-full;
+  }
+
+  .react-tags-wrapper * {
+    @apply w-full;
+  }
+
+  .react-tags-wrapper .ReactTags__tagInput {
+    @apply col-span-full;
+  }
+
+  .react-tags-wrapper input {
+    @apply w-full rounded-md border border-theme-light-gray p-2 focus:!shadow-none;
+  }
+
+  .ReactTags__selected {
+    @apply grid grid-cols-2 gap-1;
+  }
+
+  .tag-wrapper {
+    @apply flex justify-between whitespace-nowrap rounded-sm border border-theme-dark-gray bg-theme-light-gray p-1 text-xs text-theme-dark-gray;
+  }
+
+  .tag-wrapper * {
+    @apply w-[unset];
+  }
+
+  div.ReactTags__suggestions {
+    @apply absolute top-[calc(100%+4px)];
+  }
+
+  div.ReactTags__suggestions ul {
+    @apply w-full list-none overflow-hidden rounded-md border border-theme-light-gray bg-white;
+  }
+  div.ReactTags__suggestions li {
+    @apply border-b border-b-theme-light-gray p-2 last:border-b-0;
+  }
+  div.ReactTags__suggestions li mark {
+    @apply font-semibold underline;
+  }
+  div.ReactTags__suggestions ul li.ReactTags__activeSuggestion {
+    @apply cursor-pointer bg-theme-light-gray;
+  }
+}
