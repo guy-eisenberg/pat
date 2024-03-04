@@ -707,7 +707,7 @@ const PerformanceDaybydayTab: React.FC = () => {
       </div>
       <PerformanceDaybydaySidebar
         className={c(
-          "sticky left-0 right-0 top-0 z-20 min-h-full shrink-0 overflow-y-auto transition-all lg:bottom-0 lg:min-w-[300px]",
+          "sticky left-0 right-0 top-0 z-20 min-h-full shrink-0 w-full overflow-y-auto transition-all lg:bottom-0 lg:min-w-[300px]",
           sidebarOpen
             ? "min-w-full translate-x-0 lg:w-[27.5%]"
             : "min-w-0 translate-x-full lg:w-0 lg:translate-x-0"
@@ -1431,7 +1431,7 @@ const ResultTag: React.FC<ResultTagProps> = ({ result, ...rest }) => {
           src={result.image}
         />
         <div className="flex flex-1 flex-col justify-center gap-3 py-2 pr-4 sm:flex-row sm:items-center sm:justify-between sm:gap-1 lg:flex-col lg:items-stretch lg:justify-center 2xl:flex-row 2xl:items-center 2xl:justify-between">
-          <div className="flex min-w-0 flex-col gap-3 truncate">
+          <div className="flex min-w-0 flex-col gap-1 xl:gap-3 truncate">
             <div className="flex items-center gap-2">
               <span className="block truncate font-inter !text-base !font-semibold text-[#777777]">
                 <span className="hidden sm:inline-block lg:hidden xl:inline-block">

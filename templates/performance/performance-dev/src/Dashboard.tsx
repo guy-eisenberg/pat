@@ -1,4 +1,4 @@
-import { fetchUserStrategy } from "./api";
+import { fetchUserMeta, fetchUserStrategy } from "./api";
 import { DashboardCard, DashboardSidebar } from "./components";
 import { useQuery } from "./hooks";
 import { c, p } from "./lib";
@@ -59,13 +59,14 @@ const NAVIGATION_BUTTONS: {
 
 const Dashboard: React.FC = () => {
   const strategy = useQuery(fetchUserStrategy, undefined);
+  const user = useQuery(fetchUserMeta, undefined);
 
   return (
     <div className="flex h-full w-full flex-col md:flex-row">
       <TopText
         displayName={
-          strategy
-            ? `${strategy.first_name} ${strategy.last_name}`
+          user && user.first_name
+            ? `${user.first_name} ${user.last_name || ""}`
             : "Welcome Back!"
         }
         subscription="Professional Subscription"
@@ -76,8 +77,8 @@ const Dashboard: React.FC = () => {
         <div className="flex w-full flex-col border-b-theme-border md:block md:border-b">
           <TopText
             displayName={
-              strategy
-                ? `${strategy.first_name} ${strategy.last_name}`
+              user && user.first_name
+                ? `${user.first_name} ${user.last_name || ""}`
                 : "Welcome Back!"
             }
             subscription="Professional Subscription"

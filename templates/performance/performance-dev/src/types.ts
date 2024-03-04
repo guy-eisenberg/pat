@@ -1,8 +1,8 @@
-export type SortType = 'alphabet' | 'score' | 'recent' | 'time';
+export type SortType = "alphabet" | "score" | "recent" | "time";
 
-export type ImprovementRate = 'fast' | 'medium' | 'slow';
+export type ImprovementRate = "fast" | "medium" | "slow";
 
-export type Median = 'below' | 'average' | 'above' | 'neutral';
+export type Median = "below" | "average" | "above" | "neutral";
 
 export interface SidebarActivity {
   id: string;
@@ -36,8 +36,6 @@ export interface Performance {
 }
 
 export interface Strategy {
-  first_name: string;
-  last_name: string;
   assessor_name: string;
   assessor_color: string;
   assessor_image: string;
@@ -47,7 +45,12 @@ export interface Strategy {
   targets: any[];
 }
 
-export type PerformanceType = 'activity' | 'skill';
+export interface UserMeta {
+  first_name?: string;
+  last_name?: string;
+}
+
+export type PerformanceType = "activity" | "skill";
 
 export interface ActivityPerformance {
   id: string;
@@ -65,7 +68,7 @@ export interface ActivityPerformance {
   improvement_rate_speed: ImprovementRate;
 }
 
-export type SkillPefromance = Omit<ActivityPerformance, 'focus'>;
+export type SkillPefromance = Omit<ActivityPerformance, "focus">;
 
 export interface OverallPerformance extends Performance {
   activities: ActivityPerformance[];
@@ -107,7 +110,7 @@ export interface AvailableActivity {
   short_name: string;
 }
 
-export type AvailableSkill = Omit<AvailableActivity, 'short_name'>;
+export type AvailableSkill = Omit<AvailableActivity, "short_name">;
 
 export interface DatePeformance {
   date: Date;
@@ -127,12 +130,12 @@ export interface DatePeformance {
 }
 
 export interface DBTarget {
-  activity_type: 'target';
+  activity_type: "target";
   id: string;
   name: string;
-  target_type: 'activity' | 'skill';
-  type: 'time' | 'score' | 'improvement';
-  status: 'set' | 'achieved' | 'missed' | 'future-expire';
+  target_type: "activity" | "skill";
+  type: "time" | "score" | "improvement";
+  status: "set" | "achieved" | "missed" | "future-expire";
   figure: number;
   time: number;
   start_time: number;
@@ -141,12 +144,12 @@ export interface DBTarget {
 }
 
 export interface Target {
-  activity_type: 'target';
+  activity_type: "target";
   id: string;
   name: string;
-  target_type: 'activity' | 'skill';
-  type: 'time' | 'score' | 'improvement';
-  status: 'set' | 'achieved' | 'missed' | 'future-expire';
+  target_type: "activity" | "skill";
+  type: "time" | "score" | "improvement";
+  status: "set" | "achieved" | "missed" | "future-expire";
   figure: number;
   time: Date;
   start_time: Date;
@@ -155,33 +158,33 @@ export interface Target {
 }
 
 export interface DBResult {
-  activity_type: 'result';
+  activity_type: "result";
   id: string;
   name: string;
   short_name: string;
   hyperlink: string;
   image: string;
   score: number;
-  mode: 'normal' | 'training';
+  mode: "normal" | "training";
   from: number;
   to: number;
   duration: number;
   high_score: boolean;
-  stanine: 'below' | 'average' | 'above';
+  stanine: "below" | "average" | "above";
 }
 
 export interface Result {
-  activity_type: 'result';
+  activity_type: "result";
   id: string;
   name: string;
   short_name: string;
   hyperlink: string;
   image: string;
   score: number;
-  mode: 'normal' | 'training';
+  mode: "normal" | "training";
   from: Date;
   to: Date;
   duration: number;
   high_score: boolean;
-  stanine: 'below' | 'average' | 'above';
+  stanine: "below" | "average" | "above";
 }

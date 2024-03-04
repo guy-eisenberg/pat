@@ -22,9 +22,9 @@ $tz = array_key_exists('tz', $_GET) ? $_GET['tz'] : 'UTC';
 $date_from = $dates[0];
 $date_to = $dates[count($dates) - 1];
 
-$activity_filter_query =  $activity_id !== null ? "AND activity_id = $activity_id" : "";
+$activity_filter_query =  $activity_id !== null ? "AND t1.activity_id = $activity_id" : "";
 $skill_filter_query = $skill_id !== null ?
-    "AND activity_id IN (
+    "AND t1.activity_id IN (
         SELECT activity_id
         FROM $activities_skill_categories_table
         WHERE skill_category_id = $skill_id
@@ -59,9 +59,6 @@ FROM (SELECT t1.*,
                                       AND user_better_scores.time < $results_table.time
                                       AND user_better_scores.score > $results_table.score
 
-               WHERE user_id = $current_user_id
-                 AND CAST($results_table.time AS DATE) BETWEEN '$date_from' AND '$date_to'
-
                GROUP BY $results_table.id) AS t1
 
                   LEFT JOIN (SELECT activity_id, time, score
@@ -91,12 +88,17 @@ FROM (SELECT t1.*,
                                   $activities_skill_categories_table.skill_category_id) AS activities_skill_categories
                 ON activities_skill_categories.activity_id = t1.activity_id
 
+                WHERE user_id = $current_user_id
+                 AND CAST(t1.time AS DATE) BETWEEN '$date_from' AND '$date_to'
+                 $activity_filter_query
+                 $skill_filter_query
+
 GROUP BY t1.id"
 );
 
 $previous_results = $wpdb->get_results(
     "SELECT CAST(time AS DATE) AS date, score
-    FROM $results_table
+    FROM $results_table AS t1
     WHERE user_id = $current_user_id
     AND time <= '$date_to'
     AND mode = 'normal'
